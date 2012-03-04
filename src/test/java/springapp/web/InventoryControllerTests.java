@@ -2,18 +2,21 @@ package springapp.web;
 
 import org.springframework.web.servlet.ModelAndView;
 
-import springapp.web.HelloController;
-
 import junit.framework.TestCase;
+import springapp.service.SimpleProductManager;
 
-public class HelloControllerTests extends TestCase {
+import java.util.Map;
+
+public class InventoryControllerTests extends TestCase {
 
     public void testHandleRequestView() throws Exception{
-        HelloController controller = new HelloController();
+        InventoryController controller = new InventoryController();
+        controller.setProductManager(new SimpleProductManager());
         ModelAndView modelAndView = controller.handleRequest(null, null);
         assertEquals("hello", modelAndView.getViewName());
         assertNotNull(modelAndView.getModel());
-        String nowValue = (String) modelAndView.getModel().get("now");
+        Map modelMap = (Map) modelAndView.getModel().get("model");
+        String nowValue = (String) modelMap.get("now");
         assertNotNull(nowValue);
 
     }
