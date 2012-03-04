@@ -18,6 +18,21 @@
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <contextPath>/ivan</contextPath>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>jstl</artifactId>
+                        <version>1.2</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <!-- standard.jar -->
+                    <dependency>
+                        <groupId>taglibs</groupId>
+                        <artifactId>standard</artifactId>
+                        <version>1.1.2</version>
+                    </dependency>
+
+                </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -44,6 +59,13 @@
             <version>1.2</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- standard.jar -->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
 
     </dependencies>
 
